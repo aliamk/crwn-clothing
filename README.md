@@ -66,3 +66,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+App Architecture
+
+Home Page [ path: '/' ] = Navigation at top and logo
+                        = Directory-Menu > Menu-Items > Content > Title > Subititle
+
+Shop Page [ path: '/shop' ] = 5 x collection-previews > Title > Preview > collection-item > collection-footer

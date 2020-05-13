@@ -2,6 +2,12 @@ import React from 'react';
 import MenuItem from '../menu-item/menu-item.component'
 import './directory.styles.scss'
 
+/* On the homepage
+Directory Menu: Contains 5 x Menu Items that navigate to the /shop section
+Menu Item:  Contains background images and CONTENT (Title and Subtitle)
+
+
+*/
 class Directory extends React.Component {
   constructor() {
     super()
@@ -44,7 +50,7 @@ class Directory extends React.Component {
     }
   }
 
-
+// Map over the (above) state items and display all the props
 render() {
   return (
       <div className="directory-menu">
@@ -58,7 +64,7 @@ render() {
   }
 }
 
-// map{ title, imageUrl, id, size } is the same '...otherSectionProps'
+// map{ title, imageUrl, id, size } is the same as '...otherSectionProps'
 // title={title} imageUrl={imageUrl} size={size}
 
 export default Directory

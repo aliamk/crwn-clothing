@@ -2,6 +2,10 @@ import React from 'react';
 import './collection-preview.styles.scss'
 import CollectionItem from '../collection-item/collection-item.component'
 
+/* This is the content on the '/shop' page. The COLLECTION-PREVIEW
+ is the container for the COLLECTION-ITEMS which consists of 5 rows 
+ of data, each containing a Title, 4 images, a footer with captions and prices. */
+
 const CollectionPreview = ({ title, items }) => (
   <div className="collection-preview">
     <h1 className='title'>{ title.toUpperCase() }</h1>
