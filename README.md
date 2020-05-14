@@ -74,3 +74,17 @@ Home Page [ path: '/' ] = Navigation at top and logo
                         = Directory-Menu > Menu-Items > Content > Title > Subititle
 
 Shop Page [ path: '/shop' ] = 5 x collection-previews > Title > Preview > collection-item > collection-footer
+
+
+Firebase
+
+{
+    apiKey: "AIzaSyCE8o3gtPNquPCj89EfRlgbVlCtEChYQSk",
+    authDomain: "crwn-db-949da.firebaseapp.com",
+    databaseURL: "https://crwn-db-949da.firebaseio.com",
+    projectId: "crwn-db-949da",
+    storageBucket: "crwn-db-949da.appspot.com",
+    messagingSenderId: "703367615173",
+    appId: "1:703367615173:web:4b8686cc8be509b48dd6ac",
+    measurementId: "G-XSCE9G9LR6"
+  }
