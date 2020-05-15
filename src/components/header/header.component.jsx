@@ -28,6 +28,7 @@ const Header = ({ currentUser }) => (
   </div>
 )
 
-// 
+// Use the ternary operator to generate a SIGN OUT button if the user is signed in, and to return to 
+// a SIGN IN button when the user is signed out
 
 export default Header

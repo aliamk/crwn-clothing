@@ -7,7 +7,7 @@ import ShopPage from './pages/shop/shop.component'
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
 import Header from './components/header/header.component'
 
-import { auth } from './firebase/firebase.utils'
+import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 
 
 class App extends React.Component {
@@ -22,9 +22,24 @@ class App extends React.Component {
   unsubscribeFromAuth = null  // To prevent memory leaks, we need to open and close the subscription
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => { // firebase allows us to use their auth library methods instead of fetch
-      this.setState({ currentUser: user })
-      console.log(user)
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => { // firebase allows us to use their auth library methods instead of fetch
+      if (userAuth) {   // if user signs-in validly
+        const userRef = await createUserProfileDocument(userAuth)
+
+        userRef.onSnapshot(snapShot => {  // return a snapshot of either the existing user in the db
+          this.setState ({                // or details of the new user 
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          })
+          console.log(this.state)
+        })
+      } 
+      this.setState({ currentUser: userAuth })
+      
+      createUserProfileDocument(userAuth)
+      // console.log(user)
     })  
   }
 
